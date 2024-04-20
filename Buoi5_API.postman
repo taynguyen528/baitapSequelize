@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "efa5bfe0-40d1-4b3a-a72a-85b8faf34d6e",
+		"name": "Buoi5_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29512310"
+	},
+	"item": [
+		{
+			"name": "Food",
+			"item": [
+				{
+					"name": "Get Food",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/food/get-food"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurant",
+			"item": [
+				{
+					"name": "Like Restaurant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userId",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "restaurantId",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8080/restaurant/like-restaurant"
+					},
+					"response": []
+				},
+				{
+					"name": "Unlike Restaurant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "restaurantId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8080/restaurant/unlike-restaurant"
+					},
+					"response": []
+				},
+				{
+					"name": "getListRestaurantOfLikes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "userId",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "restaurantId",
+								"value": "2",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/restaurant/getListOfLikesByRestaurant?restaurantId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"getListOfLikesByRestaurant"
+							],
+							"query": [
+								{
+									"key": "restaurantId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addRestaurantRating",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "res_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8080/restaurant/addRestaurantRating"
+					},
+					"response": []
+				},
+				{
+					"name": "getListOfRatingsByRestaurant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/restaurant/getListOfRatingsByRestaurant?restaurantId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"getListOfRatingsByRestaurant"
+							],
+							"query": [
+								{
+									"key": "restaurantId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "addOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1,\r\n    \"foodId\": 2,\r\n    \"amount\": 3,\r\n    \"code\": \"ORDER123\",\r\n    \"arrSubId\": \"1,2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/order/addOrder"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
